@@ -50,6 +50,10 @@ typedef void (^ButtonBlock)(UIButton *button);
 // State.
 - (ScrollingState)getCurrentState;
 
+// Design
+@property (nonatomic, weak) UIColor *backgroundColor;
+- (void)setImageContentMode:(UIViewContentMode)contentMode;
+
 @end
 
 @protocol ICETutorialControllerDelegate <NSObject>

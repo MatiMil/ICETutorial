@@ -57,7 +57,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor blackColor]];
+    
+    if (_backgroundColor) {
+        [self.view setBackgroundColor:_backgroundColor];
+    }
+    else {
+       [self.view setBackgroundColor:[UIColor blackColor]];
+    }
+    
     
     [self setupView];
     
@@ -67,6 +74,12 @@
     
     // Preset the origin state.
     [self setOriginLayersState];
+}
+
+- (void)setImageContentMode:(UIViewContentMode) contentMode {
+    _frontLayerView.contentMode = contentMode;
+    _backLayerView.contentMode = contentMode;
+    _gradientView.contentMode = contentMode;
 }
 
 - (void)setupView {
